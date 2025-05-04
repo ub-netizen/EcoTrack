@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Activity - EcoTrack</title>
+    <link rel="stylesheet" href="friendsactivity.css">
+    <script src="friendactivity.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <button class="nav-item" onclick="location.href='app.html'">Home</button>
+            <button class="nav-item" onclick="location.href='friends.html'">Friends</button>
+        </nav>
+
+        <!-- Friend Activity Section -->
+        <section class="activity">
+            <h1>Friends' Activity</h1>
+            <p>See how your friends are reducing their carbon footprints!</p>
+            <ul id="activity-list"></ul>
+        </section>
+    </div>
+
+    <script>
+        // Load from localStorage and display activity (Friend Activity)
+        function loadActivity() {
+            const activityList = document.getElementById("activity-list");
+            activityList.innerHTML = "";
+
+            const friends = JSON.parse(localStorage.getItem("friends")) || [];
+            friends.forEach(name => {
+                const listItem = document.createElement("li");
+                const randomCO2 = (Math.random() * 20 + 1).toFixed(2); // Random CO2 for demo
+                listItem.innerHTML = `<strong>${name}</strong>: ${randomCO2} kg CO2`;
+                activityList.appendChild(listItem);
+            });
+        }
+
+        window.onload = loadActivity;
+    </script>
+</body>
+</html>

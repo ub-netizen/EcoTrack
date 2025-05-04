@@ -1,0 +1,343 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #00aaff, #66c2ff); /* Soft blues for an eco-friendly feel */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #0099cc; /* Cool blue for navbar */
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.nav-item {
+    background-color: #33b5e5; /* Lighter blue for buttons */
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+    background-color: #28a1c5; /* Darker shade on hover */
+}
+
+.hero {
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2em;
+    color: #005f73; /* Dark blue for heading */
+}
+
+.hero span {
+    color: #00b4d8; /* Light blue highlight */
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.carbon-meter {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.meter {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.meter-bar {
+    height: 100%;
+    width: 50%;
+    background: #66c2ff; /* Soft blue for carbon meter */
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out;
+}
+
+.emission-value {
+    font-weight: bold;
+    color: #66c2ff; /* Same blue for emissions value */
+    display: block;
+    margin-top: 10px;
+}
+
+.time-options button {
+    background: none;
+    border: 2px solid #66c2ff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 5px;
+    color: #66c2ff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.time-options button.active,
+.time-options button:hover {
+    background-color: #66c2ff;
+    color: white;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 16px;
+}
+
+.log-btn {
+    padding: 14px 20px;
+    background-color: #66c2ff; /* Matching blue */
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.log-btn:hover {
+    background-color: #28a1c5;
+}
+
+.leaderboard {
+    margin-top: 30px;
+}
+
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+.leaderboard-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.leaderboard-list li:hover {
+    transform: scale(1.05);
+    background-color: #edf7f1;
+}
+
+.leaderboard-list .highlight {
+    font-weight: bold;
+    background-color: #dcf5e6;
+}
+
+.log-history {
+    width: 50%;
+    margin-top: 40px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.log-history h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: #005f73;
+    font-weight: 600;
+}
+
+.log-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.log-history ul li {
+    background: #f5f5f5;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #333;
+    transition: transform 0.2s ease-in-out;
+}
+
+.log-history ul li:hover {
+    transform: scale(1.02);
+    background: #e9ecef;
+}
+
+.log-history ul li .distance {
+    font-weight: 600;
+    color: #005f73; /* Darker blue for distance */
+}
+
+.log-history ul li .co2 {
+    font-weight: 600;
+    color: #ff6f61; /* Soft coral for CO2 emissions */
+}
+
+.log-history ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+.log-history ul::-webkit-scrollbar-thumb {
+    background: #66c2ff;
+    border-radius: 10px;
+}
+
+.log-history ul::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.input-section {
+    width: 80%; /* Reduced width for better spacing */
+    margin-bottom: 40px; /* Added bottom margin to give space between form and activity log */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.log-history {
+    width: 80%; /* Adjust width for proper layout */
+    margin-top: 40px; /* Increased margin-top for more space */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.log-history h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: #4169e1;
+    font-weight: 600;
+}
+.log-history {
+    width: 80%; /* Adjust width for proper layout */
+    margin-top: 40px; /* Increased margin-top for more space */
+    padding: 20px;
+    background: #f0f8ff; /* Light blue background for the activity log */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.log-history h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: #4169e1; /* Royal blue for the heading */
+    font-weight: 600;
+}
+
+#activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#activity-list li {
+    background-color: #e6f2ff; /* Light blue background for individual logs */
+    padding: 12px;
+    margin-top: 15px;
+    border: 1px solid #b3cde0; /* Light border */
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #333;
+    transition: transform 0.2s ease-in-out;
+}
+
+#activity-list li:hover {
+    transform: scale(1.02);
+    background-color: #cce5ff; /* Slightly darker blue on hover */
+}
+
+#activity-list li .distance {
+    font-weight: bold;
+    color: #4169e1; /* Royal blue for distance */
+}
+
+#activity-list li .co2 {
+    font-weight: bold;
+    color: #ff6347; /* Tomato red for CO2 emissions */
+}
+
+#activity-list li .date {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Scrollbar styling */
+#activity-list::-webkit-scrollbar {
+    width: 6px;
+}

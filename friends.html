@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends - EcoTrack</title>
+    <link rel="stylesheet" href="friends.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <button class="nav-item" onclick="location.href='app.html'">Home</button>
+        </nav>
+
+        <!-- Friends Section -->
+        <section class="friends-section">
+            <h1>Your Friends</h1>
+            <ul id="friends-list"></ul>
+
+            <h2>Add a Friend</h2>
+            <input type="text" id="friend-name" placeholder="Enter friend's name">
+            <button onclick="addFriend()">Add Friend</button>
+        </section>
+    </div>
+
+    <script>
+        function addFriend() {
+            const input = document.getElementById("friend-name");
+            const name = input.value.trim();
+            if (!name) return;
+
+            let friends = JSON.parse(localStorage.getItem("friends")) || [];
+            if (!friends.includes(name)) {
+                friends.push(name);
+                localStorage.setItem("friends", JSON.stringify(friends));
+                updateFriendList();
+            }
+            input.value = "";
+        }
+
+        function updateFriendList() {
+            const list = document.getElementById("friends-list");
+            list.innerHTML = "";
+
+            const friends = JSON.parse(localStorage.getItem("friends")) || [];
+            friends.forEach(name => {
+                const listItem = document.createElement("li");
+                listItem.textContent = name;
+                list.appendChild(listItem);
+            });
+        }
+
+        window.onload = updateFriendList;
+    </script>
+</body>
+</html>

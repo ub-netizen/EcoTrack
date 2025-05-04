@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: white;
+    color: #003366;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0099cc; /* Cool blue for the navbar */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.nav-item {
+    background-color: #66c2ff; /* Soft, friendly blue for the nav items */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+    background-color: #28a1c5; /* Darker blue for hover state */
+}
+
+.friends-section {
+    margin-top: 30px;
+}
+
+.friends-section h1, .friends-section h2 {
+    color: #003366; /* Dark blue for headings */
+}
+
+input {
+    padding: 8px;
+    border: 2px solid #66c2ff; /* Light blue border for input fields */
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #66c2ff; /* Matching light blue for buttons */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #28a1c5; /* Darker blue for hover state */
+}
+
+#friends-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#friends-list li {
+    padding: 8px;
+    background-color: #e6f7ff; /* Light, calming blue for list items */
+    border: 1px solid #0099cc; /* Cool blue border around list items */
+    margin-top: 5px;
+    border-radius: 6px;
+}

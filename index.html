@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Enter Your Name</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Name</h1>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button id="saveNameBtn">Save Name</button>
+    </div>
+
+    <script>
+        // Save user's name to localStorage when they click the button
+        document.getElementById("saveNameBtn").addEventListener("click", function() {
+            const name = document.getElementById("nameInput").value;
+            if (name) {
+                localStorage.setItem("username", name);  // Store name in localStorage
+                window.location.href = "app.html";  // Redirect to app.html
+            } else {
+                alert("Please enter your name!");
+            }
+        });
+    </script>
+</body>
+</html>

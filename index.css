@@ -1,0 +1,54 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #7ec8e3, #4169e1); /* Blue gradient background */
+    text-align: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px; /* Adjusted width for better focus */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #4169e1; /* Royal blue for the title */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px; /* Increased space between input and button */
+}
+
+#nameInput {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid #b3cde0; /* Soft blue border */
+    font-size: 16px;
+    color: #003366; /* Dark blue text */
+}
+
+#saveNameBtn {
+    background-color: #4169e1; /* Royal blue for the button */
+    color: white;
+    padding: 14px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+#saveNameBtn:hover {
+    background-color: #3058a4; /* Darker blue on hover */
+}

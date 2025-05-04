@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: white;
+    color: #003366;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0099cc; /* Cool blue for the navbar */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.nav-item {
+    background-color: #66c2ff; /* Soft, friendly blue for the nav items */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+    background-color: #28a1c5; /* Darker blue for hover state */
+}
+
+.activity h1 {
+    color: #003366; /* Dark blue for main headings */
+}
+
+.activity p {
+    margin-top: 5px;
+    color: #333;
+}
+
+#activity-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#activity-list li {
+    padding: 10px;
+    background-color: #e6f7ff; /* Light blue background for each activity item */
+    border: 1px solid #0099cc; /* Cool blue border around activity items */
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
